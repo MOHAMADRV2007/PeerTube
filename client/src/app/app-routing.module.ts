@@ -149,6 +149,12 @@ const routes: Routes = [
     canActivateChild: [ MetaGuard ]
   },
 
+  {
+    path: 'stats',
+    loadChildren: () => import('./+stats/stats.module').then(m => m.StatsModule),
+    canActivateChild: [ MetaGuard ]
+  },
+
   // Matches /@:actorName
   {
     matcher: (url): UrlMatchResult => {
